@@ -1,2 +1,2 @@
 # AI24-Projekt-OS
-From branch Adam
+Some new stuff from main
