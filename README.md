@@ -1,1 +1,1 @@
-# AI24-projekt-OS
+# AI24-Projekt-OS
