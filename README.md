@@ -1,2 +1,2 @@
 # AI24-Projekt-OS
-Some new stuff from main
+Some new stuff from Adam
