@@ -1,39 +1,25 @@
-from dash import Dash, html, dcc, dash_table
+from dash import Dash, html
 import dash_bootstrap_components as dbc
 import pandas as pd
+import style
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 df = pd.read_csv("Data/athlete_events.csv")
 
-styles = {  
-    "div_main": {
-        'backgroundColor': '#FBE9D1',
-        'height': '100vh',
-        'display': 'flex',
-        'flexDirection': 'column',
-    },
-    "div_head":{
-        'flex': '0 0 auto',
-        'padding': '20px',
-        'backgroundColor': '#FBE9D1'
-    },
-    "div_title": {
-        "text-align": "center",
-        "font-size": "40px",
-        "font-weight": "bold",
-        "color": "#444339",
-    }}
+styles = style.styles
 
 app.layout = html.Div( style=styles["div_main"], children=[ 
     html.Div( style=styles["div_head"], children=[ 
         html.Div("Project OS", style=styles["div_title"]),
+        html.Img( style={ "width":"200px", "height":"123px", "border":"3px solid black", "display":"block"},  src="olympic_flag_2.png" ),
         html.Hr(),
     ]),
-    dbc.Table.from_dataframe(df[df["NOC"] == "HUN"].head(),   bordered=True,
-    dark=True,
-    hover=True,
-    responsive=True,
-    striped=True,)
+    dbc.Table.from_dataframe(df[df["NOC"] == "HUN"].head(),   
+        bordered=True,
+        dark=True,
+        hover=True,
+        responsive=True,
+        striped=True,)
     ])
 
 if __name__ == "__main__":
