@@ -8,8 +8,8 @@ import numpy as np
 df = pd.read_csv("Data/athlete_events.csv")
 noc_regions = pd.read_csv("Data/noc_regions.csv")
 
-# Replaces the NOC style region names with propper names
-# aka SWE becomes Sweden, HUN becomes Hungary.
+# Replaces the NOC style region names with propper names:
+# SWE becomes Sweden, HUN becomes Hungary, etc.
 df = pd.merge(df, noc_regions[['NOC', 'region']], on='NOC', how='left')
 df['NOC'] = df['region']
 df.drop(columns=['region'], inplace=True)
