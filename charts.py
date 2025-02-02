@@ -4,9 +4,9 @@ from dash import html, dcc
 import hashlib as hl
 import numpy as np
 
-
-df = pd.read_csv("Data/athlete_events.csv")
-noc_regions = pd.read_csv("Data/noc_regions.csv")
+path = "../Data/"
+df = pd.read_csv(path+"athlete_events.csv")
+noc_regions = pd.read_csv(path+"noc_regions.csv")
 
 # Replaces the NOC style region names with propper names:
 # SWE becomes Sweden, HUN becomes Hungary, etc.
